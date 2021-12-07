@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Movie Recommendations by Titan Analytics</title>
+	<meta name="description" content="A Proof of Concept Movie Recommendation System for a factious client as part of a larger Capstone project.">
+	<meta property="og:title" content="CSUF ISDS 557">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://fullerton.edu">
+	<meta property="og:description" content="CSUF is a top public university in the 23-campus California State University system. The university is located in Orange County, California.">
+	  <link rel="icon" href="/favicon.ico">
+        <!--  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+         <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+	<!-- Jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<!--loading movie titles-->
+	<script type="application/json" language="javascript" src="data/titles.json"></script>
+	<!--Semantics Ui CDN  -->
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/semantic.min.js"></script>
+	<!--javascripts for custom functions-->
+	<script type="text/javascript" src="js/recommender.js"></script>
+</head>
+
+<body>
+	<!--header-->
+	<div class="ui vertical masthead center aligned container">
+		<h1 class="ui logo">
+			<i class="huge colored teal tumblr square icon"></i>
+		</h1>
+		<h1 class="ui header">
+            Movie Recommendation Engine
+          </h1>
+		<h4>Get personalized recommendations for movies </h4> </div>
+	<!--container to get movie from user-->
+	<div class="ui centered grid container movieInput" >
+		<div class="ui search" id="searchAutocomplete">
+			<p> <span class="text withWhiteSpace" >I really <em data-emoji="heart_eyes" class="small"></em> </span> <span class="ui input form field">
+               <input id="userInput" name="movie" class="prompt" type="text" placeholder=" Start typing a movie">
+            </span> <span class="text">.</span> <span class="text white-space"> I wonder if clicking this movie ticket  </span> <span>
+            <button onclick="search()" class="circular basic grey ui icon  button">
+            <i ><em data-emoji="tickets" class="small"></em></i>
+            </button>
+          </span> <span class="text"> will recommend a <em data-emoji="pencil" class="small"></em> of <em data-emoji="film_frames" class="small"></em> I might enjoy <em data-emoji="popcorn" class="small"></em> <em data-emoji="grinning" class="small"></em></span></p>
+		</div>
+	</div>
+	<!--container to dispaly recommended movies as card-->
+	<div id="recommendations"></div>
+	<!--footer-->
+	<footer class="footer">
+		<div class="ui container">
+			<p> <em data-emoji="battery" class="small"></em> by the <em data-emoji="gear" class="loading"></em><em data-emoji="gear" class="loading"></em> algothrim developed by <b>Titan Analytics, Inc</b> - A CSUF ISDS 577 Company</p>
+		</div>
+	</footer>
+</body>
+</html>

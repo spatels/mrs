@@ -1,0 +1,31 @@
+@import url("semantic.min.css");
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.ui.movieInput {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.ui.logo {
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+.text.withWhiteSpace{
+    white-space: pre;
+}
+
+#recommendations{
+    padding-bottom: 100px;  
+}

@@ -1,9 +1,12 @@
 // declare a variable to store user input
-var title;
+let title;
+// declare variable to store available movie titles from title.json
+let content = null;
+// declare variable to store error message
+let errorMessage;
 
-// declare variable and create function to load title.json into it
-var content = (function() {
-var content = null;
+// create function to load title.json into variable content
+let loadAvailableMovies = (function() {
 $.ajax({
   'async': false,
   'global': false,
@@ -21,7 +24,7 @@ $(document).ready(function () {
  
   $('.ui.search')
       .search({
-        source: content
+        source: loadAvailableMovies
       });
 
 });
@@ -39,9 +42,9 @@ const url = "http://mrsapi.patel.us/recommend?title=" + encodeURIComponent(`${ti
 
 // error message to display in toaster based on conditions
 if(title == ""){
-  var errorMessage =`You forgot to type in the movie. Tell us a movie you enjoyed and we will create a personalized movie watchlist for you!`;
+  errorMessage =`You forgot to type in the movie. Tell us a movie you enjoyed and we will create a personalized movie watchlist for you!`;
 }  else {
-  var errorMessage =`We can't seem to give you any recommendations for ${title} because we do not have this movie in our system. Please try another movie!`;
+  errorMessage =`We can't seem to give you any recommendations for ${title.bold()} because we do not have this movie in our system. Please try another movie!`;
 };
 
 // getting data and showing results on UI or displaying error if not results.
